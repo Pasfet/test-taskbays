@@ -1,0 +1,76 @@
+@import '../../assets/colors';
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    max-width: 230px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 13.6671px;
+    line-height: 16px;
+    @media (min-width: 1280px) {
+      max-width: 270px;
+      font-size: 16.1214px;
+      line-height: 19px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 17.64px;
+      line-height: 21px;
+      max-width: 300px;
+    }
+    @media (min-width: 1920px) {
+      font-size: 22px;
+      line-height: 26px;
+      max-width: 380px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    &__card {
+      margin-right: 30px;
+    }
+  }
+
+  &__reports {
+    background-color: $orange;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    &:hover {
+      cursor: pointer;
+      background-color: $white;
+      border-color: $orange;
+      svg {
+        fill: $orange;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      width: 38px;
+      height: 38px;
+    }
+    @media (min-width: 1920px) {
+      width: 57px;
+      height: 57px;
+    }
+
+    svg {
+      fill: $white;
+      transition: fill 0.3s ease;
+      @media (min-width: 1920px) {
+        width: 33px;
+        height: 42px;
+      }
+    }
+  }
+}

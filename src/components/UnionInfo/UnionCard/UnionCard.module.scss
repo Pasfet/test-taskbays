@@ -1,0 +1,117 @@
+@import '../../../assets/colors';
+
+.card {
+  display: flex;
+  border-radius: 6px;
+  box-shadow: $union-card-shadow;
+  width: 190px;
+  overflow: hidden;
+  @media (min-width: 1280px) {
+    width: 230px;
+  }
+  @media (min-width: 1920px) {
+    width: 260px;
+  }
+
+  &__rating {
+    border-top-left-radius: 6px;
+    padding: 4px;
+    align-self: flex-start;
+    color: $white;
+    font-weight: 600;
+    font-size: 11.5547px;
+    line-height: 19px;
+    background-color: $light-green;
+
+    @media (min-width: 1280px) {
+      font-size: 13.6296px;
+      line-height: 22px;
+    }
+    @media (min-width: 1920px) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  &__content {
+    align-self: flex-end;
+    margin-left: 3px;
+    &-title {
+      font-weight: 600;
+      font-size: 12.9991px;
+      line-height: 19px;
+      color: $dark;
+      max-width: 224px;
+
+      @media (min-width: 1280px) {
+        font-size: 15.3333px;
+        line-height: 22px;
+      }
+      @media (min-width: 1920px) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+    &-country {
+      display: flex;
+      align-items: center;
+      &__title {
+        font-weight: 600;
+        font-size: 10.5683px;
+        line-height: 23px;
+        color: $gray;
+        margin-right: 5px;
+
+        @media (min-width: 1280px) {
+          font-size: 12.4661px;
+          line-height: 27px;
+        }
+        @media (min-width: 1920px) {
+          font-size: 14px;
+          line-height: 32px;
+        }
+      }
+      img {
+        border: 0.5px solid $gray;
+        width: 12px;
+        height: 8px;
+
+        @media (min-width: 1280px) {
+          width: 15px;
+          height: 10px;
+        }
+      }
+    }
+  }
+
+  &__number {
+    &-team {
+      position: absolute;
+      top: 20%;
+      left: -80%;
+      font-weight: bold;
+      font-size: 72.217px;
+      line-height: 19px;
+      color: rgba(5, 12, 66, 0.1);
+      transform: translate(-20%, -5%);
+      z-index: -1;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-left: auto;
+    margin-right: 15px;
+    transform: translateY(10px);
+    img {
+      object-fit: contain;
+      width: 46px;
+      height: 60px;
+
+      @media (min-width: 1280px) {
+        width: 55px;
+        height: 70px;
+      }
+    }
+  }
+}

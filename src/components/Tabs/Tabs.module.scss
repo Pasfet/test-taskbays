@@ -1,0 +1,21 @@
+@import '../../assets/colors';
+
+.tabs {
+  min-width: 890px;
+  height: 80vh;
+  box-shadow: $tab-shadow;
+  &__list {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    background-color: $light-gray;
+    display: flex;
+    align-items: center;
+  }
+
+  &-content {
+    background-color: $white;
+    height: 100%;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+  }
+}

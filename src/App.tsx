@@ -1,58 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { FC, useEffect } from 'react';
+import { useActions, useAppSelector } from './store/hooks';
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
+import Router from './Router/Router';
+import styles from './App.module.scss';
 
-function App() {
+const App: FC = () => {
+  const { fetchAllClubs } = useActions();
+  const { all_clubs } = useAppSelector(state => state.clubs);
+
+  useEffect(() => {
+    if (!all_clubs.length) {
+      fetchAllClubs();
+    }
+  }, [all_clubs.length, fetchAllClubs]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+    <section className={styles['page']}>
+      <header className={styles['page-header']}>
+        <Header />
       </header>
-    </div>
+      <aside className={styles['page-sidebar']}>
+        <Sidebar />
+      </aside>
+      <main className={styles['page-main']}>
+        <Router />
+      </main>
+    </section>
   );
-}
+};
 
 export default App;
